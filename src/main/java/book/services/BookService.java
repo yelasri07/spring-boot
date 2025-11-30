@@ -1,6 +1,9 @@
-package com.example.demo;
+package book.services;
 
 import org.springframework.stereotype.Service;
+
+import book.model.BookEntity;
+import book.persistence.BookRepository;
 
 @Service
 public class BookService {

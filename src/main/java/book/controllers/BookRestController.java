@@ -1,8 +1,10 @@
-package com.example.demo;
+package book.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import book.services.BookService;
 
 @RestController
 public class BookRestController {
