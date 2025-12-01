@@ -1,14 +1,14 @@
-package com.example.demo;
+package com.jiraws.library.configuration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EntityScan("book.model")
-@EnableJpaRepositories(basePackages = "book.persistence")
+@EntityScan("com.jiraws.library.*.model")
+@EnableJpaRepositories(basePackages = "com.jiraws.library.*.persistence")
 @SpringBootApplication(scanBasePackages = {
-	"book", "com.example.demo"
+	"com.jiraws.library", "com.example.demo"
 })
 public class DemoApplication {
 

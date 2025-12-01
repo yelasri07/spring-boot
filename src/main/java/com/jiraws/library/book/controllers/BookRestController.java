@@ -1,10 +1,11 @@
-package book.controllers;
+package com.jiraws.library.book.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import book.services.BookService;
+import com.jiraws.library.book.services.BookService;
 
 @RestController
 public class BookRestController {
@@ -22,4 +23,8 @@ public class BookRestController {
 
     }
 
+    @PostMapping("/book")
+    public String post() {
+        return "hello post";
+    }
 }

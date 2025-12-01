@@ -1,9 +1,9 @@
-package book.services;
+package com.jiraws.library.book.services;
 
 import org.springframework.stereotype.Service;
 
-import book.model.BookEntity;
-import book.persistence.BookRepository;
+import com.jiraws.library.book.model.BookEntity;
+import com.jiraws.library.book.persistence.BookRepository;
 
 @Service
 public class BookService {
