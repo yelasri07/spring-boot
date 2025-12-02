@@ -15,27 +15,20 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
     
-    public String createBook(String bookName, Integer bookPages) throws BookCreationException {
-
-        if (bookName == null || bookName.isBlank()) {
-            throw new BookCreationException("Error book name");
-        }
-
-        if (bookPages ==  null || bookPages < 10) {
+    public BookEntity createBook(String bookName, Integer bookPages) throws BookCreationException {
+        if (bookPages < 10) {
             throw new BookCreationException("Error book pages");
         }
-
-        BookEntity newBook = BookEntity.builder().name(bookName).pages(bookPages).build();
-
+        
         BookEntity existingBook = bookRepository.findByNameAndPages(bookName, bookPages);
         if (existingBook != null) {
             throw new BookCreationException("Book already exist");
         }
-
+        
+        BookEntity newBook = BookEntity.builder().name(bookName).pages(bookPages).build();
         this.bookRepository.save(newBook);
 
-        return "book saved";
-
+        return newBook;
     } 
 
 }
