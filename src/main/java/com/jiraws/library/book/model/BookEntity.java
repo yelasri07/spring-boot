@@ -20,6 +20,9 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    String isbn;
     String name;
+    String Description;
+    Integer year;
     Integer pages;
 }
